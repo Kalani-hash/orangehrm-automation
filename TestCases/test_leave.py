@@ -1,7 +1,7 @@
 import pytest
-from pages.login_page import LoginPage
-from pages.dashboard_page import DashboardPage
-from pages.leave_page import LeavePage
+from PageObjects.login_page import LoginPage
+from PageObjects.dashboard_page import DashboardPage
+from PageObjects.leave_page import LeavePage
 
 @pytest.mark.usefixtures("driver")
 def test_leave_page_navigation(driver):

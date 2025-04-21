@@ -1,8 +1,13 @@
 import pytest
-from pages.login_page import LoginPage
-from pages.dashboard_page import DashboardPage
+from PageObjects.login_page import LoginPage
+from PageObjects.dashboard_page import DashboardPage
 
-def test_login_successful(driver):
+def test_home_page_title(driver):
+    login_page = LoginPage(driver)
+    login_page.load()
+    assert "OrangeHRM" in login_page.get_title()
+
+def test_login_functionality(driver):
     login_page = LoginPage(driver)
     login_page.load()
     login_page.login("Admin", "admin123")
